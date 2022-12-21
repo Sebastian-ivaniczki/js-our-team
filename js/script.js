@@ -1,24 +1,10 @@
-/*
-Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
-Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
-MILESTONE 0:
-Creare l’array di oggetti con le informazioni fornite.
-MILESTONE 1:
-Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-MILESTONE 2:
-Stampare le stesse informazioni su DOM sottoforma di stringhe
-BONUS 1:
-Trasformare la stringa foto in una immagine effettiva
-BONUS 2:
-Organizzare i singoli membri in card/schede e rendere la pagina gradevole (potete usare lo screen in allegato come spunto
-*/
 
 // * preparazione
 
 const teamElement = document.getElementById('team-info'); 
 
 const ourTeam = [{
-    fullName: 'wayne Barnet',
+    fullName: 'Wayne Barnet',
     role: 'founder & CEO',
     profileImage:'wayne-barnett-founder-ceo.jpg'
 },
@@ -48,9 +34,19 @@ const ourTeam = [{
     profileImage:'barbara-ramos-graphic-designer.jpg'  
 }];
 
-//creo un ciclo for per girare nell'Aray
+//! creo un ciclo for per girare nell'Aray ed una variabile d'appoggio
 
+let employerProfile = '';
 for(let i = 0; i < ourTeam.length; i++){
    const team = ourTeam[i]
-    console.log(team.fullName)
+
+    employerProfile += `<div class="card ">
+                <img src="img/${team.profileImage}" class="card-img-top" alt="${team.fullName}">
+                <div class="card-body text-center">
+                    <h6>${team.fullName}</h6>
+                    <p class="card-text">${team.role}</p>
+                </div>
+            </div>`
 }
+
+teamElement.innerHTML =  employerProfile
