@@ -1,0 +1,29 @@
+body{
+    background-color: #D2D2CE;
+}
+
+/* section */
+section{
+    margin-top: 10rem;
+    text-align: center;
+    width: 900px;
+    margin: 4rem auto;
+}
+
+p{
+    line-height: 2rem;
+}
+/* deck */
+.card-deck{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+/* card style */
+.card{
+    width: 16rem;
+    
+}
